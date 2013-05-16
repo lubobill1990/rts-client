@@ -76,7 +76,11 @@ return array(
 			'password' => 'pass',
 			'charset' => 'utf8',
 		),
-
+        'redis' => array(
+            'class' => 'ext.YiiRedis.ARedisConnection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+        ),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -103,6 +107,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'lubobill1990@163.com',
+        'useRedis'=>false,
         'page_title'=>array(
             'default'=>'RTS-Client'
         )

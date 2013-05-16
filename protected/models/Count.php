@@ -1,21 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "user_activate_code".
+ * This is the model class for table "count".
  *
- * The followings are the available columns in table 'user_activate_code':
- * @property string $user_id
- * @property string $code
- *
- * The followings are the available model relations:
- * @property User $user
+ * The followings are the available columns in table 'count':
+ * @property string $subject_type
+ * @property string $subject_id
+ * @property string $count_type
+ * @property integer $count
  */
-class UserActivateCode extends CActiveRecord
+class Count extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return UserActivateCode the static model class
+	 * @return Count the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +26,7 @@ class UserActivateCode extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'user_activate_code';
+		return 'count';
 	}
 
 	/**
@@ -38,12 +37,14 @@ class UserActivateCode extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id', 'required'),
-			array('user_id', 'length', 'max'=>11),
-			array('code', 'length', 'max'=>40),
+			array('subject_id', 'required'),
+			array('count', 'numerical', 'integerOnly'=>true),
+			array('subject_type', 'length', 'max'=>9),
+			array('subject_id', 'length', 'max'=>11),
+			array('count_type', 'length', 'max'=>19),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('user_id, code', 'safe', 'on'=>'search'),
+			array('subject_type, subject_id, count_type, count', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +56,6 @@ class UserActivateCode extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -65,8 +65,10 @@ class UserActivateCode extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'user_id' => 'User',
-			'code' => 'Code',
+			'subject_type' => 'Subject Type',
+			'subject_id' => 'Subject',
+			'count_type' => 'Count Type',
+			'count' => 'Count',
 		);
 	}
 
@@ -81,12 +83,17 @@ class UserActivateCode extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('code',$this->code,true);
+		$criteria->compare('subject_type',$this->subject_type,true);
+		$criteria->compare('subject_id',$this->subject_id,true);
+		$criteria->compare('count_type',$this->count_type,true);
+		$criteria->compare('count',$this->count);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 
+    public function getRedisKey(){
+        return "{$this->subject_type}:{$this->subject_id}:count:{$this->count_type}";
+    }
 }
