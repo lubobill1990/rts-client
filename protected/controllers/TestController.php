@@ -9,7 +9,6 @@
 class TestController extends Controller
 {
     function actionIndex(){
-        $user=User::model()->findByPk(2);
-        var_dump( $user->getOperationKey('block'));
+        $this->smarty->render('index');
     }
 }
