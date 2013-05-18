@@ -9,6 +9,6 @@
 class TestController extends Controller
 {
     function actionIndex(){
-        $this->smarty->render('index');
+        $this->smarty->renderAll('index');
     }
 }

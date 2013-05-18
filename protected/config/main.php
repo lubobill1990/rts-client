@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'client of real-time server',
-
+    'homeUrl'=>'/',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -58,6 +58,7 @@ return array(
 			'rules'=>array(
                 'signup'=>'User/signup',
                 'login'=>'User/login',
+                'logout'=>'User/logout',
                 'account/activate'=>"User/activate",
                 'account/retrieve_password'=>'User/retrievePassword',
                 'account/reset_password'=>'User/resetPassword',

@@ -1,3 +1,4 @@
+@charset "US-ASCII";
 /* line 4, ../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html {
   margin: 0;
@@ -1784,7 +1785,1085 @@ ul.icons li [class*=" icon-"] {
   content: "\f115";
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 5, ../sass/partials/_webim.scss */
+.WJ_webim * {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, ../sass/partials/_webim.scss */
+.WJ_webim {
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #333;
+  z-index: 1000;
+}
+/* line 14, ../sass/partials/_webim.scss */
+.WJ_webim h1, .WJ_webim h2, .WJ_webim h3, .WJ_webim h4, .WJ_webim h5, .WJ_webim h6, .WJ_webim dl, .WJ_webim dt, .WJ_webim dd, .WJ_webim ul, .WJ_webim ol, .WJ_webim li, .WJ_webim th, .WJ_webim td, .WJ_webim p, .WJ_webim blockquote, .WJ_webim pre, .WJ_webim form, .WJ_webim fieldset, .WJ_webim legend, .WJ_webim input, .WJ_webim button, .WJ_webim textarea, .WJ_webim hr {
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../sass/partials/_webim.scss */
+.WJ_webim .WJ_webim_arrow {
+  -o-transform: none;
+  -moz-transform: none;
+  -webkit-transform: none;
+  transform: none;
+  writing-mode: lr-tb;
+}
+/* line 25, ../sass/partials/_webim.scss */
+.WJ_webim .webim_win_minD {
+  width: 182px;
+  background: url(/images/webim/webim_minwin_bg.png?id=1355308751941) repeat-x;
+  overflow: hidden;
+  height: 24px;
+  border: solid 1px #ababab;
+  line-height: 24px;
+  line-height: 26px 9;
+  box-shadow: 0 0 5px rgba(0, 0, 75, 0.2);
+  border-radius: 1px 1px 0 0;
+}
+/* line 35, ../sass/partials/_webim.scss */
+.WJ_webim .webim_win_minD .statusbox {
+  float: left;
+  width: 9px;
+  height: 10px;
+  overflow: hidden;
+  padding-right: 7px;
+  margin: 8px 8px 0 7px;
+  _margin-right: 5px;
+  _display: inline;
+  border-right: 1px solid #cbcbcb;
+}
+/* line 47, ../sass/partials/_webim.scss */
+.WJ_webim .wbim_min_friend .statusbox {
+  float: left;
+  width: 9px;
+  height: 10px;
+  overflow: hidden;
+  padding-right: 7px;
+  margin: 8px 8px 0 7px;
+  _margin-right: 5px;
+  _display: inline;
+  border-right: 1px solid #cbcbcb;
+}
+/* line 59, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: solid 1px #969696;
+  box-shadow: 0 0 5px rgba(0, 0, 75, 0.2);
+  background: #fff;
+  -moz-transition: opacity .4s ease;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease 0s;
+}
+/* line 69, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_state {
+  text-align: center;
+  background: #f6f6f6;
+  height: 22px;
+  padding-top: 11px;
+  border-bottom: solid 1px #ddd;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+/* line 77, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_fold_btn {
+  display: block;
+  width: 10px;
+  padding-left: 10px;
+  height: 100%;
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  _top: 50%;
+  cursor: pointer;
+}
+/* line 87, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_fold_btn .btn_click {
+  display: block;
+  width: 10px;
+  padding: 40px 0;
+  margin-top: -40px;
+  _margin: 0;
+  _height: 80%;
+  background: url(/images/webim/webim_foldbtn_bg.png?id=1355308751941) repeat;
+  text-align: center;
+  border: solid 1px #c0c4ca;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+}
+/* line 99, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_fold_btn .btn_click .WJ_webim_arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-width: 4px 4px 4px 0;
+  border-style: dashed solid dashed dashed;
+  border-color: transparent #444 transparent transparent;
+  overflow: hidden;
+}
+/* line 111, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .list_content_li {
+  margin-top: 5px;
+}
+/* line 113, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .list_content_li li {
+  padding: 6px 10px;
+  cursor: pointer;
+  height: 30px;
+  overflow: hidden;
+}
+/* line 118, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .list_content_li li:hover, .WJ_webim .webim_list .list_content_li li.li_hover {
+  background: none repeat scroll 0 0 #F0EFEF;
+  border-bottom: 1px solid #E5E5E5;
+  border-top: 1px solid #E5E5E5;
+  padding: 5px 10px;
+}
+/* line 125, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .list_content_li .webim_list_head {
+  display: inline;
+}
+/* line 129, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_list_head, .WJ_webim .webim_list .webim_list_name {
+  float: left;
+}
+/* line 132, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_list_name {
+  line-height: 30px;
+  margin-left: 10px;
+}
+/* line 136, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_head_30 .head_pic {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+/* line 141, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .W_chat_stat.W_chat_stat_offline {
+  background-color: #D4D4D4;
+  border-color: #B8B8B8;
+}
+/* line 145, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .W_chat_stat {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  overflow: hidden;
+}
+/* line 154, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_list_main {
+  position: relative;
+}
+/* line 157, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_fold_btn .btn_click {
+  display: block;
+  width: 10px;
+  padding: 40px 0;
+  margin-top: -40px;
+  _margin: 0;
+  _height: 80%;
+  background: url(/images/webim/webim_foldbtn_bg.png?id=1355308751941) repeat;
+  text-align: center;
+  border: solid 1px #c0c4ca;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+}
+/* line 169, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .webim_fold_btn .btn_click .WJ_webim_arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-width: 4px 0 4px 4px;
+  border-style: dashed dashed dashed solid;
+  border-color: transparent transparent transparent #444;
+  overflow: hidden;
+}
+/* line 182, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting {
+  background: #fff;
+  border-top: solid 1px #c9d0da;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+/* line 187, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .state_setting_btn {
+  background: #f2f4f8;
+  height: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 193, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .list_setting_box {
+  background: #f2f4f8;
+  height: 25px;
+  line-height: 25px;
+}
+/* line 197, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .list_setting_box .setting_r {
+  float: right;
+}
+/* line 200, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .list_setting_box .setting_ser {
+  padding-left: 6px;
+  float: left;
+  cursor: pointer;
+  width: 86px;
+}
+/* line 207, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .search_box {
+  float: left;
+  position: relative;
+  background: #fff;
+  width: 92px;
+  _width: 90px;
+  height: 24px;
+}
+/* line 215, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .layer_menu_list {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  line-height: 16px;
+}
+/* line 222, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_setting .setting_btn {
+  display: inline-block;
+  float: left;
+  width: 29px;
+  height: 25px;
+  border-left: solid 1px #c9d0da;
+  text-align: center;
+}
+/* line 232, ../sass/partials/_webim.scss */
+.WJ_webim .webim_min_friend .online_num {
+  color: #333;
+}
+/* line 235, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold {
+  width: 182px;
+}
+/* line 238, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold .webim_tab {
+  width: 182px;
+  overflow: hidden;
+}
+/* line 242, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold .tab_list {
+  margin-left: -1px;
+}
+/* line 244, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold .tab_list li {
+  float: left;
+}
+/* line 246, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold .tab_list li a {
+  display: block;
+  float: left;
+  width: 59px;
+  _width: 58px;
+  height: 30px;
+  background: #f4f4f4;
+  padding: 0 0 0 1px;
+  border-right: solid 1px #e4e4e4;
+  border-bottom: solid 1px #d9d9d9;
+  text-align: center;
+}
+/* line 259, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_unfold .tab_list li.cur a {
+  background: #fff;
+  border-right: solid 1px #e4e4e4;
+  padding: 0;
+  _padding: 0 1px;
+}
+/* line 267, ../sass/partials/_webim.scss */
+.WJ_webim .webim_min_chat {
+  width: 162px;
+  padding: 0 10px;
+  line-height: 24px;
+  border-radius: 0;
+}
+/* line 277, ../sass/partials/_webim.scss */
+.WJ_webim .webim_newMsg {
+  background: #FFCF4D !important;
+}
+/* line 280, ../sass/partials/_webim.scss */
+.WJ_webim .webim_tit2 {
+  height: 32px;
+  padding: 0 1px;
+  color: #333;
+  border-bottom: 1px solid #afafaf;
+  background: url(/images/webim/webim_minwin_bg.png?id=1355308751941) 0 -128px repeat-x;
+  line-height: 30px;
+  cursor: pointer;
+  color: #808080;
+}
+/* line 290, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box {
+  width: 420px;
+  height: 398px;
+  border: 1px solid #ababab;
+  background: #fff;
+}
+/* line 297, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .webim_tit2_lf {
+  float: left;
+  margin-left: 4px;
+  display: inline;
+}
+/* line 302, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .webim_tit2_rt {
+  height: 16px;
+  float: right;
+  display: inline;
+  margin: 7px 8px 0 0;
+}
+/* line 309, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .tit2_lf_con .webim_list_head {
+  background: #fff;
+  display: inline-block;
+  padding: 1px;
+  border: solid 1px #ababab;
+  border-bottom: none;
+  margin: -21px 10px 0 0;
+  vertical-align: middle;
+  _height: 50px;
+  overflow: hidden;
+  _margin-top: -22px;
+}
+/* line 323, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .webim_head_50 {
+  width: 50px;
+  height: 50px;
+}
+/* line 326, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .webim_head_50 .head_pic {
+  display: inline-block;
+}
+/* line 328, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .webim_head_50 .head_pic img {
+  width: 50px;
+  height: 50px;
+}
+/* line 334, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_tit2 .rt_icon {
+  margin-left: 6px;
+}
+/* line 339, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .layer_setting {
+  position: absolute;
+  line-height: 16px;
+}
+/* line 342, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .layer_setting .setting_list {
+  background: #fff;
+  border: solid 1px #ababab;
+  padding: 1px;
+}
+/* line 346, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .layer_setting .setting_list li {
+  padding: 5px 7px;
+  cursor: pointer;
+  _width: 78px;
+}
+/* line 351, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .layer_setting .setting_list .WJ_radio {
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+/* line 358, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson {
+  float: left;
+  width: 104px;
+  height: 365px;
+  background: #f2f2f2;
+  _overflow: hidden;
+}
+/* line 364, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_lf {
+  border-right: solid 1px #c9c9c9;
+}
+/* line 366, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_lf #chatting-friend-list-scroll-container {
+  height: 365px;
+}
+/* line 370, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_box {
+  height: 320px;
+  margin: 1px 0 4px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 376, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list {
+  position: absolute;
+  top: 0;
+  width: 104px;
+  min-height: 320px;
+}
+/* line 381, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list li {
+  float: left;
+  cursor: pointer;
+  margin: 2px 0 0 0;
+  display: inline;
+  padding: 1px 1px 1px 6px;
+  width: 99px;
+  height: 28px;
+  zoom: 1;
+  overflow: hidden;
+  position: relative;
+}
+/* line 392, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list li .list_head_state {
+  _display: inline;
+  margin: 10px 5px 0 0;
+  float: left;
+  position: relative;
+}
+/* line 398, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list li .W_chat_stat.W_chat_stat_offline {
+  background-color: #D4D4D4;
+  border-color: #B8B8B8;
+}
+/* line 403, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list .webim_username {
+  height: 30px;
+  width: 72px;
+  line-height: 30px;
+}
+/* line 407, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list .webim_username .webim_icon_vf {
+  _margin: 8px 0 0;
+  _vertical-align: 0;
+}
+/* line 412, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_chat_friend_list li.webim_active {
+  background: #fff;
+  width: 97px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  z-index: 3;
+  font-weight: bold;
+}
+/* line 421, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_scrolltop {
+  background-position: -360px 0;
+}
+/* line 424, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_scrollbtm {
+  background-position: -465px 0;
+}
+/* line 427, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .webim_chat_wrap .webim_win_mutiperson .webim_username {
+  float: left;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  _white-space: normal;
+  overflow: hidden;
+  _font-family: "宋体";
+}
+
+/* line 442, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a span, .WJ_webim .W_btn_b span, .WJ_webim .W_btn_c span, .WJ_webim .W_btn_a_disable span, .WJ_webim .W_btn_b_disable span, .WJ_webim .W_btn_c_disable span {
+  min-width: 5px;
+  text-align: center;
+  padding: 0 9px 0 8px;
+}
+
+/* line 448, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a, .WJ_webim .W_btn_a span {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* line 454, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a:hover span {
+  background-position: right -90px;
+}
+
+/* line 460, ../sass/partials/_webim.scss */
+.WJ_webim textarea {
+  resize: none;
+  border: none;
+  background: #fff;
+}
+
+/* line 467, ../sass/partials/_webim.scss */
+.WJ_webim .sendbox_btn .webim_tips_char {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 472, ../sass/partials/_webim.scss */
+.WJ_webim .sendbox_btn .btn {
+  margin-top: 2px;
+  position: relative;
+}
+
+/* line 478, ../sass/partials/_webim.scss */
+.webim_chat_up .webim_chat_tips {
+  line-height: 15px;
+  padding: 4px 5px 4px 9px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  position: relative;
+  zoom: 1;
+}
+/* line 484, ../sass/partials/_webim.scss */
+.webim_chat_up .webim_chat_tips .WBIM_icon_tipsclose {
+  float: right;
+  margin: 2px;
+  _margin-top: 0;
+}
+/* line 490, ../sass/partials/_webim.scss */
+.webim_chat_up .webim_tips01 {
+  background: #f3f8fc;
+  border: solid 1px #d4e4f1;
+}
+
+/* line 502, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar, .webim_chat_sendbox .sendbox_btn {
+  background: #f3f3f3;
+  line-height: 25px;
+}
+/* line 507, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .sendbox_ac {
+  float: left;
+  padding-left: 10px;
+}
+/* line 510, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .sendbox_ac .sendbox_kind .WBIM_icon_com {
+  margin-right: 12px;
+}
+/* line 514, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .WBIM_icon_com {
+  vertical-align: middle;
+}
+/* line 517, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .sendbox_show {
+  float: right;
+}
+/* line 520, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .sendbox_his {
+  color: #808080;
+}
+/* line 522, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_bar .sendbox_his .WBIM_icon_com {
+  margin-right: 3px;
+}
+/* line 528, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_box {
+  height: 68px;
+}
+/* line 530, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_box .sendbox_area {
+  width: 306px;
+  height: 58px;
+  padding: 5px;
+}
+/* line 536, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_btn {
+  background: #f3f3f3;
+  line-height: 25px;
+}
+/* line 539, ../sass/partials/_webim.scss */
+.webim_chat_sendbox .sendbox_btn .sendbox_btn_r {
+  float: right;
+}
+
+/* line 548, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_online, .WJ_webim .WBIM_icon_offline, .WJ_webim .WBIM_icon_busy, .WJ_webim .WBIM_icon_away, .WJ_webim .WBIM_icon_drop {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat;
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+/* line 555, ../sass/partials/_webim.scss */
+.WJ_webim .webim_ico_member {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -206px -100px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -206px -100px;
+  width: 16px;
+  height: 14px;
+  vertical-align: -2px;
+  _vertical-align: middle;
+}
+/* line 564, ../sass/partials/_webim.scss */
+.WJ_webim .sendbox_show {
+  padding-right: 9px;
+}
+/* line 567, ../sass/partials/_webim.scss */
+.WJ_webim .sendbox_btn .sendbox_btn_r {
+  float: right;
+}
+/* line 570, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_com {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat;
+  _background: url(/images/webim/images/webim_icon.gif?id=1355308751941) no-repeat;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+/* line 580, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_iconsend_face {
+  background-position: -205px 0;
+}
+/* line 583, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_iconsend_img {
+  background-position: -205px -25px;
+}
+/* line 586, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_iconsend_att {
+  background-position: -205px -49px;
+}
+/* line 589, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_iconsend_his {
+  background-position: -205px -75px;
+}
+/* line 592, ../sass/partials/_webim.scss */
+.WJ_webim .icon_warnS {
+  background-position: 0 -200px;
+}
+/* line 595, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_leftfold {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -70px -269px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -70px -269px;
+  width: 10px;
+  height: 10px;
+}
+/* line 602, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_tipsclose {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -30px -141px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -30px -141px;
+  width: 12px;
+  height: 12px;
+}
+/* line 609, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_downfold {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -70px -141px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -70px -141px;
+  width: 10px;
+  height: 11px;
+}
+/* line 616, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_msg {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -70px -289px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -70px -289x;
+  width: 12px;
+  height: 10px;
+}
+/* line 623, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_online {
+  background-position: 0 0;
+}
+/* line 627, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icontab_link {
+  background-position: -259px 0;
+  width: 13px;
+  height: 15px;
+  margin-top: 7px;
+}
+/* line 633, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icontab_group {
+  background-position: -259px -25px;
+  width: 19px;
+  height: 17px;
+  margin-top: 6px;
+}
+/* line 639, ../sass/partials/_webim.scss */
+.WJ_webim .cur .WBIM_icontab_last {
+  background-position: -290px -50px;
+}
+/* line 643, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_settingY {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -108px -129px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -108px -129 x;
+  width: 16px;
+  height: 16px;
+}
+/* line 650, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_minY {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -108px -152px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -108px -152px;
+  width: 16px;
+  height: 16px;
+}
+/* line 657, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_closeY {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat -108px -175px;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat -108px -175px;
+  width: 16px;
+  height: 16px;
+}
+/* line 665, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_wbclose {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 90px;
+}
+/* line 671, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .WBIM_icontab_link, .WJ_webim .webim_list .WBIM_icontab_group, .WJ_webim .WBIM_icontab_last {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat;
+}
+/* line 676, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .WBIM_icontab_group {
+  background-position: -259px -25px;
+  width: 19px;
+  height: 17px;
+  margin-top: 6px;
+}
+/* line 682, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .WBIM_icontab_last {
+  background-position: -259px -50px;
+  width: 16px;
+  height: 16px;
+  margin-top: 6px;
+}
+/* line 688, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .WBIM_icontab_link {
+  background-position: -259px 0;
+  width: 13px;
+  height: 15px;
+  margin-top: 7px;
+}
+/* line 695, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .cur .WBIM_icontab_link {
+  background-position: -290px 0;
+}
+/* line 698, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .cur .WBIM_icontab_last {
+  background-position: -290px -50px;
+}
+/* line 701, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list .cur .WBIM_icontab_group {
+  background-position: -290px -25px;
+}
+/* line 704, ../sass/partials/_webim.scss */
+.WJ_webim .WJ-color-error {
+  color: red;
+}
+
+/* line 709, ../sass/partials/_webim.scss */
+.webim_chat_rt {
+  float: left;
+  _width: 316px;
+}
+/* line 712, ../sass/partials/_webim.scss */
+.webim_chat_rt .webim_confirm_box {
+  position: absolute;
+  width: 220px;
+  z-index: 1001;
+  border: 1px solid #c6c6c6;
+  background: #fff;
+}
+
+/* line 721, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a, .WJ_webim .W_btn_a span, .WJ_webim .W_btn_b, .WJ_webim .W_btn_b span, .WJ_webim .W_btn_c, .WJ_webim .W_btn_c span, .WJ_webim .W_btn_a_disable, .WJ_webim .W_btn_a_disable span, .WJ_webim .W_btn_b_disable, .WJ_webim .W_btn_b_disable span, .WJ_webim .W_btn_c_disable, .WJ_webim .W_btn_c_disable span {
+  display: inline-block;
+  background: url(/images/webim/bg_btn.png?id=1355308751941) no-repeat;
+  _background-image: url(/images/webim/bg_btn.gif?id=1355308751941);
+  padding: 0 0 0 2px;
+  height: 22px;
+  line-height: 21px;
+}
+
+/* line 730, ../sass/partials/_webim.scss */
+.WJ_webim .webim_scrolltop, .WJ_webim .webim_scrolltop_a, .WJ_webim .webim_scrolltop_n, .WJ_webim .webim_scrollbtm, .WJ_webim .webim_scrollbtm_a, .WJ_webim .webim_scrollbtm_n {
+  width: 104px;
+  height: 20px;
+  display: block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat;
+}
+
+/* line 738, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box, .WJ_webim .webim_dia_line {
+  margin-top: 10px;
+  line-height: 17px;
+}
+/* line 741, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box .dia_info, .WJ_webim .webim_dia_line .dia_info {
+  margin-bottom: 2px;
+}
+/* line 743, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box .dia_info .info_date, .WJ_webim .webim_dia_line .dia_info .info_date {
+  color: #808080;
+  vertical-align: -1px;
+}
+/* line 748, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box .webim_dia_bg, .WJ_webim .webim_dia_line .webim_dia_bg {
+  min-width: 72px;
+  max-width: 202px;
+  margin: 0 8px;
+  padding: 5px 9px;
+  border-radius: 5px;
+  position: relative;
+}
+/* line 755, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box .webim_dia_bg .dia_txt, .WJ_webim .webim_dia_line .webim_dia_bg .dia_txt {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+/* line 761, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_box .msg_arr, .WJ_webim .webim_dia_line .msg_arr {
+  display: inline-block;
+  background: url(/images/webim/webim_icon.png?id=1355308751941) no-repeat;
+  _background: url(/images/webim/webim_icon.gif?id=1355308751941) no-repeat;
+  width: 8px;
+  height: 12px;
+  position: absolute;
+  top: 8px;
+}
+
+/* line 772, ../sass/partials/_webim.scss */
+.webim_dia_line {
+  padding-top: 10px;
+  border-bottom: dotted 1px #d8d8d8;
+}
+
+/* line 778, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_line {
+  clear: both;
+}
+/* line 781, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_r {
+  _display: inline;
+  float: right;
+  clear: both;
+  margin-right: 6px;
+}
+/* line 786, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_r .dia_info {
+  margin-right: 18px;
+  _margin-right: 5px;
+  text-align: right;
+}
+/* line 791, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_r .webim_dia_bg {
+  background: #ebfbe3;
+  border: solid 1px #dff0d8;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.75);
+}
+/* line 796, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_r .msg_arr {
+  background-position: -72px 0;
+  right: -8px;
+}
+/* line 801, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_l {
+  float: left;
+  clear: both;
+}
+/* line 804, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_l .dia_info {
+  margin-left: 18px;
+  text-align: left;
+}
+/* line 808, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_l .webim_dia_bg {
+  background: #f3f3f3;
+  border: solid 1px #eaeaea;
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.75);
+}
+/* line 813, ../sass/partials/_webim.scss */
+.WJ_webim .webim_dia_l .msg_arr {
+  background-position: -70px -16px;
+  left: -8px;
+}
+
+/* line 820, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_head .WBIM_icon_dev, .webim_list_head .W_chat_stat, .webim_list_head .WBIM_chat_groupstat, .webim_list_head .WBIM_icon_mobile, .webim_list_head .WBIM_icon_desk_online, .webim_list_head .WBIM_icon_desk_busy, .webim_list_head .WBIM_icon_desk_away, .webim_list_head .WBIM_icon_group, .webim_list_head .WBIM_icon_groupshield {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+}
+
+/* line 826, ../sass/partials/_webim.scss */
+.WJ_webim .W_chat_stat.W_chat_stat_online {
+  background-color: #8FDC00;
+  border-color: #48C000;
+}
+
+/* line 831, ../sass/partials/_webim.scss */
+#friend-list-scroll-container {
+  position: relative;
+  width: 182px;
+}
+/* line 834, ../sass/partials/_webim.scss */
+#friend-list-scroll-container .overview {
+  width: 170px;
+}
+
+/* line 840, ../sass/partials/_webim.scss */
+.WJ_webim .webim_list_head {
+  position: relative;
+}
+
+/* line 845, ../sass/partials/_webim.scss */
+.webim_list {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: solid 1px #969696;
+  box-shadow: 0 0 5px rgba(0, 0, 75, 0.2);
+  background: #fff;
+  -moz-transition: opacity .4s ease;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease 0s;
+}
+
+/* line 857, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_icon_wbclose {
+  background: url("/images/webim/webim_icon.png?id=1355308751941") no-repeat scroll -111px -198px transparent;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 867, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .chatbox-user:hover .WBIM_icon_wbclose {
+  display: block;
+}
+/* line 873, ../sass/partials/_webim.scss */
+.WJ_webim .webim_chat_box .chatbox-user .WBIM_icon_wbclose {
+  display: none;
+}
+/* line 879, ../sass/partials/_webim.scss */
+.WJ_webim #webim-chatbox-scrollbar .viewport {
+  width: 300px;
+  height: 224px;
+}
+/* line 883, ../sass/partials/_webim.scss */
+.WJ_webim #webim-chatbox-scrollbar .overview {
+  width: 300px;
+}
+
+/* line 892, ../sass/partials/_webim.scss */
+.WJ_webim .WBIM_fold {
+  width: 50px;
+}
+/* line 895, ../sass/partials/_webim.scss */
+.WJ_webim li {
+  list-style: none outside none;
+}
+
+/* line 899, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a span {
+  background-position: right -30px;
+}
+
+/* line 902, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a:hover span {
+  background-position: right -90px;
+}
+
+/* line 905, ../sass/partials/_webim.scss */
+.WJ_webim .W_btn_a span, .WJ_webim .W_btn_b span, .WJ_webim .W_btn_c span, .WJ_webim .W_btn_a_disable span, .WJ_webim .W_btn_b_disable span, .WJ_webim .W_btn_c_disable span {
+  min-width: 5px;
+  text-align: center;
+  padding: 0 9px 0 8px;
+}
+
+/* line 910, ../sass/partials/_webim.scss */
+textarea.alert {
+  background-color: #ffd3d3;
+}
+
+/* line 1, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container {
+  margin: 0;
+}
+
+/* line 5, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .viewport {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 11, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .overview {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 20, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .scrollbar {
+  background: #eee;
+  position: absolute;
+  right: 0;
+  background-position: 0 0;
+  float: right;
+  width: 10x;
+}
+
+/* line 29, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .track {
+  height: 100%;
+  width: 9px;
+  position: relative;
+  padding: 0 1px;
+}
+
+/* line 37, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .thumb {
+  background: transparent url(/images/tinyscrollbar/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+  height: 20px;
+  width: 9px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+
+/* line 48, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .thumb .end {
+  background: transparent url(/images/tinyscrollbar/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+  overflow: hidden;
+  height: 5px;
+}
+
+/* line 55, ../sass/partials/_scroll_bar.scss */
+.scrollbar-container .disable {
+  display: none;
+}
+
+/* line 59, ../sass/partials/_scroll_bar.scss */
+.noSelect {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+/* line 24, ../sass/screen.scss */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -2219,14 +3298,14 @@ form.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 41, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -2237,7 +3316,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 44, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -2248,7 +3327,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 49, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
@@ -2258,4 +3337,10 @@ body.two-col #content {
 /* line 147, ../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #content {
   overflow-x: hidden;
+}
+
+/* line 60, ../sass/screen.scss */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
 }

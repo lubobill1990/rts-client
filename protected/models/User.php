@@ -13,6 +13,8 @@
  * @property string $blocked
  *
  * The followings are the available model relations:
+ * @property Following[] $followers
+ * @property Following[] $following
  * @property UserOperationKey $operationKeys
  */
 class User extends CActiveRecord
@@ -60,6 +62,8 @@ class User extends CActiveRecord
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'followers' => array(self::MANY_MANY, 'User', 'following(user_id,follow_user_id)'),
+            'following' => array(self::MANY_MANY, 'User', 'following(follow_user_id,user_id)'),
             'operationKeys' => array(self::HAS_MANY, 'UserOperationKey', 'user_id'),
         );
     }
@@ -140,5 +144,10 @@ class User extends CActiveRecord
     public function getOperationKey($operation)
     {
         return UserOperationKey::model()->findByAttributes(array('operation' => $operation, 'user_id' => $this->id));
+    }
+
+    public function getAvatarUrl($size = 100)
+    {
+        return Common::getGravatar($this->email, $size);
     }
 }

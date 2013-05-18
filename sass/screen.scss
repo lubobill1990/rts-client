@@ -11,6 +11,9 @@
 @import "blueprint/scaffolding";
 
 @import "partials/font-awesome";
+
+@import "partials/webim";
+@import "partials/scroll_bar";
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
 // @include blueprint
@@ -53,4 +56,7 @@ body.two-col {
     // true means it's the last column in the row
     @include column($content-columns, true);
   }
+}
+.clearfix{
+  @include clearfix();
 }

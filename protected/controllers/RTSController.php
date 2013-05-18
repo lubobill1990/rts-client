@@ -50,7 +50,7 @@ class RTSController extends Controller
     {
         $auth_code = AuthCode::model()->findByPk($auth_code);
         if (!empty($auth_code)) {
-            echo json_encode(array('user_id' => $auth_code->user_id));
+            echo CJSON::encode(array('user_id' => $auth_code->user_id));
         }
     }
 }

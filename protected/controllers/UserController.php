@@ -47,8 +47,9 @@ class UserController extends Controller
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
-            if ($model->validate() && $model->login())
-                $this->redirect(Yii::app()->user->returnUrl);
+            if ($model->validate() && $model->login()){
+                $this->redirect("/");
+            }
         }
         // display the login form
         $this->smarty->renderAll('login', array('model' => $model));
@@ -60,6 +61,7 @@ class UserController extends Controller
     public function actionLogout()
     {
         Yii::app()->user->logout();
+//        var_dump()
         $this->redirect(Yii::app()->homeUrl);
     }
 

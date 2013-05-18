@@ -24,7 +24,22 @@
     </div>
 </div>
 {include file='layouts/footer.tpl'}
-<div class="testArea"></div>
 
-</body>
+{if $login_user|default:false && $login_user->id}
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $(function () {
+            $.get('/message/webIM', function (data) {
+                if (data.success) {
+                    $('body').append(data.data)
+                }
+            }, 'json')
+        })
+    })
+    require(['cssrefresh'],function(){
+
+    })
+</script>
+
+{/if}
 </html>
