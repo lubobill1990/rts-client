@@ -28,13 +28,22 @@ class UserIdentity extends CUserIdentity
 
         if ($user === NULL) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
+            $login_log = new LoginLog();
+            $login_log->attributes = array('user_login_id' => $this->username, 'ip' => Common::getClientIp(), 'is_real_user' => 'no', 'success' => 'no');
+            $login_log->save();
         } else {
             $this->user_id = $user->id;
 
             if ($user->authorizePassword($this->password)) {
                 $this->errorCode = self::ERROR_NONE;
+                $login_log=new LoginLog();
+                $login_log->attributes = array('user_login_id' =>$this->username, 'ip' => Common::getClientIp(), 'is_real_user' => 'yes', 'success' => 'yes');
+                $login_log->save();
             } else {
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
+                $login_log = new LoginLog();
+                $login_log->attributes = array('user_login_id' => $this->username, 'ip' => Common::getClientIp(), 'is_real_user' => 'yes', 'success' => 'no');
+                $login_log->save();
             }
         }
         return !$this->errorCode;

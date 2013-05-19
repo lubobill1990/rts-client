@@ -39,7 +39,7 @@ class LoginLog extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_login_id, ip, timestamp', 'required'),
+			array('user_login_id, ip', 'required'),
 			array('user_login_id, ip', 'length', 'max'=>50),
 			array('success, is_real_user', 'length', 'max'=>3),
 			// The following rule is used by search().

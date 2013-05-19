@@ -164,7 +164,7 @@ define(['rts','rts.util','charcounter'],function(rts){
             this.refreshScrollBar();
         }
         function ChatBox() {
-
+            this.conversation_count=0;
         }
 
         ChatBox.prototype.init = function () {
@@ -296,6 +296,10 @@ define(['rts','rts.util','charcounter'],function(rts){
                     }
                 }, 'json')
             })
+            this.conversation_count++;
+            if(this.conversation_count>1){
+                this.extend();
+            }
         }
         ChatBox.prototype.chatTo = function (user_id) {
             var thisObj = this;
@@ -306,7 +310,6 @@ define(['rts','rts.util','charcounter'],function(rts){
             }
             thisObj.show();
             this.newConversation(user_id, true);
-
         }
         /**
          * 在左侧添加信息，即收到对方的信息后，在左侧显示
@@ -374,6 +377,17 @@ define(['rts','rts.util','charcounter'],function(rts){
             if ($('#webim_chat_friend_list>li').length == 0) {
                 chatbox.close();
             }
+
+            this.conversation_count--;
+            if(this.conversation_count<2){
+                this.shrink();
+            }
+        }
+        ChatBox.prototype.shrink=function(){
+            $('#webim_chat_box').css({width:316})
+        }
+        ChatBox.prototype.extend=function(){
+            $('#webim_chat_box').css({width:422})
         }
         ChatBox.prototype.highlight = function (user_id) {
             //如果未激活该对话，则在边栏显示高亮

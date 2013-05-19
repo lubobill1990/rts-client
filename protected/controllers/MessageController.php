@@ -32,6 +32,7 @@ class MessageController extends Controller
     public function actionFriendList()
     {
         $sql = "SELECT u2.id, u2.username, u2.email FROM (SELECT * FROM user WHERE user.id=:user_id) AS u1 INNER JOIN following AS f1 ON u1.id=f1.user_id INNER JOIN user AS u2 ON f1.follow_user_id=u2.id INNER JOIN following AS f2 ON f2.user_id=u2.id AND f2.follow_user_id=u1.id";
+        $sql="SELECT id,username,email FROM user WHERE id<>:user_id";
         $res = Yii::app()->db->createCommand($sql)->queryAll(true, array('user_id' => Yii::app()->user->user->id));
         foreach ($res as &$rec) {
             $rec['avatar_url'] = Common::getGravatar($rec['email']);

@@ -16,7 +16,7 @@
 </head>
 <body>
 {include file='layouts/header.tpl'}
-<div id="wrapper">
+<div id="page_wrapper">
     <div class="container">
     {if $content_tpl|default:''}
         {$content_tpl}
@@ -36,9 +36,9 @@
             }, 'json')
         })
     })
-    require(['cssrefresh'],function(){
-
-    })
+//    require(['cssrefresh'],function(){
+//
+//    })
 </script>
 
 {/if}

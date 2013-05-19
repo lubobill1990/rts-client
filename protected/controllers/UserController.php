@@ -11,48 +11,74 @@ class UserController extends Controller
     public function actionSignup()
     {
         $user = new User();
-
+        $error = array();
         if (Yii::app()->request->isPostRequest) {
             $user->attributes = $_POST['User'];
 
-            $transaction = Yii::app()->db->beginTransaction();
-            try {
-                if ($user->save()) {
-                    $activate_code = $user->generateOperationKey('activate');
-                    $transaction->commit();
+            if ($_REQUEST['captcha'] != Yii::app()->captcha->text()) {
+                $error['captcha'] = 1;
+            }else{
 
-                    Yii::app()->mailer->send(
-                        $user->email,
-                        '账户完成注册，请激活',
-                        $this->smarty->fetchString('signup_email',
-                            array('user' => $user, 'activate_code' => $activate_code)));
-                    $this->smarty->renderAll('signup_success', array('user' => $user));
-                } else {
-                    throw new Exception("用户创建失败");
+                $transaction = Yii::app()->db->beginTransaction();
+                try {
+                    if ($user->save()) {
+                        $activate_code = $user->generateOperationKey('activate');
+                        $transaction->commit();
+
+                        Yii::app()->mailer->send(
+                            $user->email,
+                            '账户完成注册，请激活',
+                            $this->smarty->fetchString('signup_email',
+                                array('user' => $user, 'activate_code' => $activate_code)));
+                        $this->smarty->renderAll('signup_success', array('user' => $user));
+                    } else {
+                        throw new Exception("用户创建失败");
+                    }
+                } catch (Exception $e) {
+                    $transaction->rollback();
+
+                    if ($e->getCode() == 23000) {
+
+                        if (preg_match("/key 'email'/", $e->getMessage())) {
+                            $error['email'] = 1;
+                        } elseif (preg_match("/key 'username'/", $e->getMessage())) {
+                            $error['username'] = 1;
+                        }
+                    }
                 }
-            } catch (Exception $e) {
-                $transaction->rollback();
-                $this->smarty->renderAll('signup', array('user' => $user, 'error' => $user->errors));
             }
-        } else {
-            $this->smarty->renderAll('signup', array('user' => $user));
+            $user->password=$_POST['User']['password'];
         }
+        $this->smarty->renderAll('signup', array('user' => $user, 'error' => $error));
+
     }
 
     public function actionLogin()
     {
         $model = new LoginForm;
+        $errors=array();
+        $show_captcha=false;
 
         // collect user input data
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
+            //查询这个用户名在一段时间内登陆错误的次数
+            $res=Yii::app()->db->createCommand("SELECT count(*) AS count FROM user_login_log WHERE user_login_id=:login_id AND timestamp>:timestamp AND success='no'")->query(array('login_id'=>$model->username,'timestamp'=>strftime("%Y-%m-%d %H:%M:%S",time()-30)))->read();
+            if($res['count']>3){
+                $show_captcha=true;
+            }
+            if($show_captcha&&(!isset($_POST['captcha'])||$_POST['captcha']!=Yii::app()->captcha->text())){
+                $errors['captcha']=1;
+            }
             // validate user input and redirect to the previous page if valid
-            if ($model->validate() && $model->login()){
+            elseif ($model->validate()&& $model->login()) {
                 $this->redirect("/");
+            }else{
+                $errors['username']=1;
             }
         }
         // display the login form
-        $this->smarty->renderAll('login', array('model' => $model));
+        $this->smarty->renderAll('login', array('model' => $model,'show_captcha'=>$show_captcha,'errors'=>$errors));
     }
 
     /**
@@ -61,7 +87,6 @@ class UserController extends Controller
     public function actionLogout()
     {
         Yii::app()->user->logout();
-//        var_dump()
         $this->redirect(Yii::app()->homeUrl);
     }
 
@@ -81,7 +106,7 @@ class UserController extends Controller
                             $user->has_been_activated = 'yes';
                             if ($user->save()) {
                                 $activate_code->delete();
-                                Yii::app()->mailer->send($user->email, "账户 $user->email 激活成功", '账户激活成功');
+                                Yii::app()->mailer->send($user->email, "账户 $user->email 激活成功", $this->smarty->fetchString('activate_success_email',array('user'=>$user)));
                                 $this->smarty->renderAll('activate_success', array('message' => '账户激活成功'));
                             }
                         } else {

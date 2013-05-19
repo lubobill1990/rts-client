@@ -58,21 +58,47 @@ a img {
   border: none;
 }
 
-/* line 12, ../sass/partials/_base.scss */
+/* line 11, ../sass/partials/_base.scss */
+body {
+  font: 12px Helvetica, Arial, sans-serif;
+}
+
+/* line 15, ../sass/partials/_base.scss */
+.fleft {
+  float: left;
+}
+
+/* line 19, ../sass/partials/_base.scss */
+.fright {
+  float: right;
+}
+
+/* line 22, ../sass/partials/_base.scss */
 .container {
   width: 950px;
   margin: 0 auto;
   position: relative;
 }
 
-/* line 18, ../sass/partials/_base.scss */
+/* line 28, ../sass/partials/_base.scss */
 #page_header {
-  background: url("/images/header/header-bg.png") repeat-x scroll 0 0 transparent;
   height: 48px;
   width: 100%;
   z-index: 20;
+  color: #d5d5d5;
+  height: 28px;
+  background-color: #545652;
+  min-width: 950px;
 }
-/* line 23, ../sass/partials/_base.scss */
+/* line 36, ../sass/partials/_base.scss */
+#page_header a:active, #page_header a:link, #page_header a:visited {
+  color: #d5d5d5;
+}
+/* line 39, ../sass/partials/_base.scss */
+#page_header a:hover {
+  color: #ffffff;
+}
+/* line 42, ../sass/partials/_base.scss */
 #page_header .top-nav-profile {
   min-width: 120px;
   position: absolute;
@@ -80,104 +106,108 @@ a img {
   top: 1px;
   z-index: 10;
 }
-/* line 32, ../sass/partials/_base.scss */
-#page_header .top-nav-profile .zu-top-nav-userinfo {
-  background: none repeat scroll 0 0 transparent;
-  border-top: 0 none;
-  box-shadow: none;
-  color: white;
-  height: 44px;
-  line-height: 44px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  text-indent: 46px;
-  text-overflow: ellipsis;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-}
-/* line 46, ../sass/partials/_base.scss */
-#page_header .top-nav-profile .zu-top-nav-userinfo .avatar {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
-  height: 25px;
-  left: 10px;
-  position: absolute;
-  top: 8px;
-  width: 25px;
+/* line 52, ../sass/partials/_base.scss */
+#page_header .top-nav-info {
+  float: right;
+  margin: 0 12px 0 0;
+  line-height: 28px;
 }
 /* line 56, ../sass/partials/_base.scss */
-#page_header .top-nav-profile .top-nav-dropdown {
-  top: 44px;
-}
-/* line 58, ../sass/partials/_base.scss */
-#page_header .top-nav-profile .top-nav-dropdown a {
-  width: 120px;
-}
-/* line 63, ../sass/partials/_base.scss */
-#page_header .top-nav-profile a {
-  background-color: #0672C2;
-  display: block;
-  width: 120px;
-}
-
-/* line 70, ../sass/partials/_base.scss */
-.top-nav-dropdown {
-  display: none;
-  left: 0;
+#page_header .top-nav-info a {
+  display: inline-block;
+  zoom: 1;
   margin: 0;
-  position: absolute;
+  padding: 0 12px;
+  height: 28px;
 }
-/* line 75, ../sass/partials/_base.scss */
-.top-nav-dropdown li {
-  list-style: none outside none;
+/* line 64, ../sass/partials/_base.scss */
+#page_header .global-nav-items {
+  font-size: 0;
+}
+/* line 66, ../sass/partials/_base.scss */
+#page_header .global-nav-items a {
+  display: inline-block;
+  zoom: 1;
+  padding: 0 12px;
+  height: 28px;
+}
+/* line 73, ../sass/partials/_base.scss */
+#page_header ul {
+  list-style-type: none;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 /* line 79, ../sass/partials/_base.scss */
-.top-nav-dropdown a {
-  background-color: #0672C2;
-  border-top: 1px solid #006BBF;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  color: white;
-  display: block;
-  height: 36px;
-  line-height: 36px;
-  overflow: hidden;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  width: 145px;
-}
-/* line 94, ../sass/partials/_base.scss */
-.top-nav-dropdown .zg-icon {
-  height: 20px;
-  margin: 0 11px 0 15px;
-  vertical-align: -7px;
-  width: 20px;
+#page_header li {
+  display: inline-block;
+  zoom: 1;
+  line-height: 28px;
+  font-size: 12px;
+  vertical-align: baseline;
 }
 
-/* line 101, ../sass/partials/_base.scss */
-#page_footer {
-  margin: 0 auto;
-  color: #999999;
-  text-align: right;
+/* line 88, ../sass/partials/_base.scss */
+#page_wrapper {
+  margin-top: 10px;
+  min-height: 400px;
 }
-/* line 105, ../sass/partials/_base.scss */
+
+/* line 94, ../sass/partials/_base.scss */
+#page_footer a {
+  color: #669;
+  text-decoration: none;
+}
+/* line 98, ../sass/partials/_base.scss */
 #page_footer .container {
   border-top: 1px solid #CCCCCC;
   padding: 20px 15px;
+  color: #999;
+  padding-top: 6px;
+  margin-top: 40px;
+  overflow: hidden;
+  zoom: 1;
+  border-top: 1px dashed #ddd;
 }
 
-/* line 110, ../sass/partials/_base.scss */
+/* line 111, ../sass/partials/_base.scss */
 .zg-left {
   float: left;
 }
 
-/* line 113, ../sass/partials/_base.scss */
+/* line 115, ../sass/partials/_base.scss */
 a {
-  color: #225599;
   text-decoration: none;
+}
+
+/* line 119, ../sass/partials/_base.scss */
+#signup_form, #login_form {
+  width: 500px;
+}
+/* line 121, ../sass/partials/_base.scss */
+#signup_form label, #login_form label {
+  display: inline-block;
+  width: 74px;
+}
+/* line 126, ../sass/partials/_base.scss */
+#signup_form div, #login_form div {
+  margin: 5px 0;
+}
+
+/* line 132, ../sass/partials/_base.scss */
+#login_form .link-retrieve-password, #login_form .link-signup {
+  margin-left: 15px;
+}
+
+/* line 140, ../sass/partials/_base.scss */
+#signup_form .link-login {
+  margin-left: 27px;
+}
+
+/* line 145, ../sass/partials/_base.scss */
+.validate-error {
+  display: none;
+  color: #fe2617;
 }
 
 /*
