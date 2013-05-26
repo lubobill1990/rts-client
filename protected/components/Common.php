@@ -5,20 +5,11 @@ class Common
 {
     public static $npeasyPostSecret = "5199DED1ECBBF664AD4376306FD45F19";
 
-    public static function getCurrentUserObj()
-    {
-        if (Yii::app()->user->isGuest) {
-            return null;
-        } else {
-            return User::model()->findByPk(Yii::app()->user->id);
-        }
-    }
-
     public static function requireRequests($fields)
     {
         foreach ($fields as $field) {
             if (!isset($_REQUEST[$field])) {
-                AjaxResponse::send(AjaxResponse::MISSING_PARAM);
+                AjaxResponse::missParam();
             }
         }
     }
@@ -160,23 +151,6 @@ class Common
         fclose($file);
     }
 
-    public static function getCurrentUserRole()
-    {
-        $user = User::model()->findByPk(Yii::app()->user->id);
-        if ($user == null) {
-            return self::GUEST; // 游客
-        } else {
-            $simu_user_role = $user->simu_user_role;
-            if ($simu_user_role == null) {
-                return self::AUTH_USER; // 登陆用户（普通用户）
-            } else if ($simu_user_role->role == 'admin') {
-                return self::ADMIN; // 管理员
-            } else {
-                return self::AUTH_USER; // 其他情况，暂定登陆用户
-            }
-        }
-    }
-
     static function getClientIp()
     {
         if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
@@ -197,88 +171,16 @@ class Common
         return strftime("%Y-%m-%d %H:%M:%S");
     }
 
-    static function mail($email, $subject, $content, $username = '思目网用户')
+    public static function getSubjectObject($subject_type, $subject_id)
     {
-        self::sendMail($email, $username, $subject, $content);
-    }
-
-    protected static $mail = null;
-
-    public static function getMail()
-    {
-        if (self::$mail == null) {
-            self::$mail = new PHPMailer();
-            self::$mail->IsSendmail();
-
-            self::$mail->IsSMTP();
-            self::$mail->Host = Yii::app()->params['emailHost'];
-            self::$mail->SMTPAuth = true;
-            self::$mail->Username = Yii::app()->params['emailUsername'];
-            self::$mail->Password = Yii::app()->params['emailPassword'];
-            self::$mail->Port = Yii::app()->params['emailSMTPPort'];
-            self::$mail->From = Yii::app()->params['emailFrom'];
-            self::$mail->FromName = Yii::app()->params['emailFromName'];
+        //TODO 更多的判断
+        $subject_class = ucfirst($subject_type);
+        if(!class_exists($subject_class)){
+            throw new Exception("class $subject_class not exists");
         }
-        return self::$mail;
-    }
-
-    public static function actualSendMail($address, $username, $subject, $body, $alt_body, $from_name)
-    {
-        $mail = self::getMail();
-        $mail->AddAddress($address, $username);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->AltBody = $alt_body; // optional, comment out and test
-        $mail->FromName = $from_name;
-        if (!$mail->Send()) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    private static $send_mail_daemon_running = true;
-    public static $send_mail_daemon_actived = false;
-
-    public static function sendMailDaemon()
-    {
-        while (Common::$send_mail_daemon_running) {
-            $transaction = Yii::app()->db->beginTransaction();
-            try {
-                $criteria = new CDbCriteria();
-                $criteria->order = 'create_time asc';
-                $criteria->limit = '10';
-                $criteria->addCondition("state='not_sended'");
-                $emails = EmailToSend::model()->findAll($criteria);
-                foreach ($emails as $email) {
-                    if (Common::actualSendMail(
-                        $email->to_address, $email->to_alias_name,
-                        $email->subject, $email->body, $email->alt_body, $email->from_alias_name
-                    )
-                    ) {
-                        $email->state = 'sended';
-                        $email->save();
-                    }
-                }
-                $transaction->commit();
-            } catch (Exception $e) {
-                $transaction->rollback();
-                Common::log($e->getMessage());
-            }
-            sleep(500);
-        }
-    }
-
-    public static function sendMail($address, $username, $subject, $body)
-    {
-        $email_to_send = new EmailToSend();
-        $email_to_send->body = "<!DOCTYPE html><html><head><meta charset='utf8'></head>$body</html>";
-        $email_to_send->from_alias_name = Yii::app()->params['emailFromName'];
-        $email_to_send->to_alias_name = $username;
-        $email_to_send->subject = $subject;
-        $email_to_send->to_address = $address;
-        $email_to_send->alt_body = Yii::app()->params['emailAltBody'];
-        $email_to_send->save();
+        $subject = new $subject_class;
+        $subject->id = $subject_id;
+        return $subject;
     }
 
 
@@ -348,6 +250,7 @@ class Common
         }
         return $path;
     }
+
     public static function  httpPostAsync($url, $params)
     {
         $post_string = http_build_query($params);
@@ -368,6 +271,7 @@ class Common
         fwrite($fp, $out);
         fclose($fp);
     }
+
     public static function  httpPost($url, array $postFiled)
     {
         //echo $url;
@@ -511,6 +415,36 @@ class Common
         }
         return $url;
     }
+    public static function getAttedUserIdsFromString($content, $user_id)
+    {
+        $user_ids = array();
+        if (preg_match_all('/(?<=@)[^\s]+/', $content, $matches)) {
+
+            $sql = "SELECT following.follower_id AS id ,user.username AS username FROM " .
+                "following LEFT JOIN user on following.follower_id=user.id " .
+                "WHERE following.user_id=:user_id AND " . Yii::app()->db->getCommandBuilder()->createInCondition('user', 'username', $matches[0]);
+            $command = Yii::app()->db->createCommand($sql);
+            $res = $command->query(array('user_id' => $user_id));
+
+            foreach ($res as $row) {
+                $user_ids[$row['username']] = $row['id'];
+            }
+            return $user_ids;
+        }
+        return array();
+    }
+
+    public static function addLinkToAttedUsersInString($content, &$users_array)
+    {
+        $user_username_array = array();
+        $user_username_with_link_array = array();
+        foreach ($users_array as $username => $user_id) {
+            $user_username_array[] = '@' . $username;
+            $user_username_with_link_array[] = "<a href='/" . $user_id . "'>@{$username}</a>";
+        }
+        return str_replace($user_username_array, $user_username_with_link_array, $content);
+    }
+
 }
 
 ?>

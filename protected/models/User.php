@@ -150,4 +150,12 @@ class User extends CActiveRecord
     {
         return Common::getGravatar($this->email, $size);
     }
+
+    public function getUrl(){
+        return '/u/'.$this->username;
+    }
+
+    public function hasPrivilege($privilege){
+        return false;
+    }
 }

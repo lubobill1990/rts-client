@@ -12,11 +12,9 @@ function smarty_function_substr($params, $template)
     $start = (int)$params['from'];
     $length = (int)$params['length'];
     $encode=isset($params['encode'])?$params['encode']:'';
-    if (strlen($source) < $start) {
-        return '';
-    }
+
     if($encode=='utf8'){
-        return Common::utf_substr($source,$length);
+        return mb_substr($source,$start,$length);
     }else{
         return substr($source,$start,$length);
     }

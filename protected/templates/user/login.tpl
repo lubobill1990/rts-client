@@ -1,4 +1,5 @@
 <form action="" method="post" id='login_form'>
+    <input type="hidden" name="return_url" value="{$return_url}">
     <div>
         <label for="login_username">邮箱/用户名</label>
         <input type="text" name="LoginForm[username]" id='login_username' value="{$model->username}">

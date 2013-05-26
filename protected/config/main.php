@@ -24,6 +24,7 @@ return array(
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '*'),
         ),
+        'feedback'
 
     ),
 
@@ -74,7 +75,10 @@ return array(
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>' => '<controller>/index',
-//                '<a:\w+>'=>'Site/error'
+                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                '<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
+                '<module:\w+>' => '<module>/default/index',
+
             ),
         ),
 
@@ -90,8 +94,13 @@ return array(
             'hostname' => 'localhost',
             'port' => 6379,
         ),
+        'cache' => array(
+            'class' => 'system.caching.CMemCache',
+            'servers' => array(
+                array('host' => '127.0.0.1', 'port' => 11211),
+            ),
+        ),
         'errorHandler' => array(
-            // use 'site/error' action to display errors
             'errorAction' => 'site/error',
         ),
         'log' => array(
@@ -119,6 +128,9 @@ return array(
         'useRedis' => false,
         'page_title' => array(
             'default' => 'RTS-Client'
+        ),
+        'feedback'=>array(
+            'short_comment_content_length'=>60
         )
     ),
 );

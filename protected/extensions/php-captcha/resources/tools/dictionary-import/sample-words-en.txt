@@ -135143,7 +135143,7 @@ polyprismatic
 polyprothetic
 polyprotodont
 polyprotodontia
-polypseudonymous
+polyusernameous
 polypsychic
 polypsychical
 polypsychism
@@ -142911,7 +142911,7 @@ pseudonychium
 pseudonym
 pseudonymal
 pseudonymic
-pseudonymity
+pseudonymmity
 pseudonymous
 pseudonymously
 pseudonymousness

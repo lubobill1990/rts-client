@@ -72,13 +72,13 @@ class UserController extends Controller
             }
             // validate user input and redirect to the previous page if valid
             elseif ($model->validate()&& $model->login()) {
-                $this->redirect("/");
+                $this->redirect(isset($_REQUEST['return_url'])?$_REQUEST['return_url']:"/");
             }else{
                 $errors['username']=1;
             }
         }
         // display the login form
-        $this->smarty->renderAll('login', array('model' => $model,'show_captcha'=>$show_captcha,'errors'=>$errors));
+        $this->smarty->renderAll('login', array('model' => $model,'show_captcha'=>$show_captcha,'errors'=>$errors,'return_url'=>$_SERVER["HTTP_REFERER"]));
     }
 
     /**
